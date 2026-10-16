@@ -7,6 +7,8 @@ import frc.robot.Constants;
 import java.io.File;
 import swervelib.SwerveDrive;
 import swervelib.parser.SwerveParser;
+import swervelib.telemetry.SwerveDriveTelemetry;
+import swervelib.telemetry.SwerveDriveTelemetry.TelemetryVerbosity;
 
 public class SwerveSubsystem extends SubsystemBase {
   private final SwerveDrive drive;
@@ -15,6 +17,7 @@ public class SwerveSubsystem extends SubsystemBase {
   public SwerveSubsystem() {
     try {
       File folder = new File(Filesystem.getDeployDirectory(), "swerve");
+      SwerveDriveTelemetry.verbosity = TelemetryVerbosity.HIGH;
       drive = new SwerveParser(folder).createSwerveDrive(Constants.MAX_SPEED_METERS_PER_SECOND);
     } catch (Exception e) {
       throw new RuntimeException("Could not initialize YAGSL. Check deploy/swerve JSON and hardware.", e);
