@@ -1,0 +1,65 @@
+{
+  "NetworkTables": {
+    "transitory": {
+      "Shuffleboard": {
+        "open": true
+      },
+      "SmartDashboard": {
+        "Encoders": {
+          "open": true
+        },
+        "Field": {
+          "open": true
+        },
+        "open": true,
+        "swerve": {
+          "double[]##v_/SmartDashboard/swerve/measuredStates": {
+            "open": true
+          },
+          "modules": {
+            "backleft": {
+              "open": true
+            },
+            "backright": {
+              "open": true
+            },
+            "frontleft": {
+              "open": true
+            },
+            "frontright": {
+              "open": true
+            },
+            "open": true
+          },
+          "open": true
+        }
+      }
+    },
+    "types": {
+      "/FMSInfo": "FMSInfo",
+      "/SmartDashboard/Encoders": "Alerts",
+      "/SmartDashboard/Field": "Field2d"
+    }
+  },
+  "NetworkTables Info": {
+    "Clients": {
+      "open": true
+    },
+    "Server": {
+      "Subscribers": {
+        "open": true
+      },
+      "open": true
+    },
+    "glass@1": {
+      "Subscribers": {
+        "open": true
+      },
+      "open": true
+    }
+  },
+  "NetworkTables Settings": {
+    "mode": "Client (NT4)",
+    "serverTeam": "11755"
+  }
+}
