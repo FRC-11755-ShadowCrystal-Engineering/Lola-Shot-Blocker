@@ -6,16 +6,12 @@
       },
       "SmartDashboard": {
         "Encoders": {
-          "open": true
-        },
-        "Field": {
-          "open": true
+          "string[]##v_/SmartDashboard/Encoders/warnings": {
+            "open": true
+          }
         },
         "open": true,
         "swerve": {
-          "double[]##v_/SmartDashboard/swerve/measuredStates": {
-            "open": true
-          },
           "modules": {
             "backleft": {
               "open": true

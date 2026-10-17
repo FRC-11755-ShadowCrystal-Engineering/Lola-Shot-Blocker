@@ -21,24 +21,21 @@ public class Dozer extends SubsystemBase {
         SHOTBLOCK,
         DOWN
     };
-
+                                                                                            
     PIDController armPID = new PIDController(1, 0, 0);
-    ArmFeedforward armFF = new ArmFeedforward(0, 1, 0);
-    DozerState dozerState;
+    ArmFeedforward armFF = new ArmFeedforward(0, 0.5, 0);
+    DozerState dozerState = DozerState.STARTING;
 
-    SparkMax dozerSparkMax = new SparkMax(30, MotorType.kBrushless);
+    SparkMax dozerSparkMax = new SparkMax(4, MotorType.kBrushless);
     RelativeEncoder dozerEncoder = dozerSparkMax.getEncoder();
 
     public Dozer() {
         SparkMaxConfig sparkConfig = (SparkMaxConfig)(new SparkMaxConfig()
             .voltageCompensation(12)
-            .smartCurrentLimit(40, 40)
-            .inverted(false));
-        EncoderConfig encoderConfig = new EncoderConfig()
-            .inverted(false)
-            .positionConversionFactor(2*Math.PI*(1/75))
-            .velocityConversionFactor(2*Math.PI*(1/75)/60);
-        sparkConfig.apply(encoderConfig);
+            .smartCurrentLimit(40, 40));
+        EncoderConfig encoderConfig = sparkConfig.encoder
+            .positionConversionFactor(2*Math.PI*(1.0/75.0))
+            .velocityConversionFactor(2*Math.PI*(1.0/75.0)/60.0);
 
         dozerSparkMax.configure(sparkConfig, ResetMode.kNoResetSafeParameters, PersistMode.kPersistParameters);
 
